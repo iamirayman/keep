@@ -30,7 +30,7 @@
             </div>
 
             <div class="googleAccount">
-              <button  onclick="clearStorage() " class="deleteall iconHoverEffect appIcon iconHoverEffect3" title="Delet all notes" style="cursor: pointer;">
+              <button  onclick="deleteAlret()" class="deleteall iconHoverEffect appIcon iconHoverEffect3" title="Delet all notes" style="cursor: pointer;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="ppath" d="M15 4V3H9v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5zm2 15H7V6h10v13z"></path><path class="ppath" d="M9 8h2v9H9zm4 0h2v9h-2z"></path></svg>                
               </button> 
                 <button title="reload" onclick="location.reload()" class="refreshIcon iconHoverEffect appIcon iconHoverEffect"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg>
@@ -58,6 +58,33 @@
         </div>
 
     </main>
+    <div class="alert-box-container">
+      <div class="alret-box">
+        <button onclick="
+            document.querySelector('.alert-box-container').classList.remove('open')
+          " title="exit" class="exit">
+          &times;
+        </button>
+        <span class="flag-x">
+          &times;
+        </span>
+        <span class="alret-title">
+          Are you sure ?
+        </span>
+        <span class="alret-description">
+          Do you really want to delete all notes
+          this can`t be restore
+        </span>
+        <div class="buttons">
+          <button title="yes delete" onclick="
+            clearStorage()
+            ">Yes</button>
+          <button title="No Cancel" onclick="
+          document.querySelector('.alert-box-container').classList.remove('open')
+          ">No</button>  
+        </div>
+      </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
