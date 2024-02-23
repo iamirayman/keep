@@ -41,9 +41,18 @@ function createItem() {
   }
 }
 
+function deleteAlret () {
+if (todoList.length === 0) {
+    console.log('no notes availbale')
+  } else {
+  document.querySelector('.alert-box-container').classList.add('open')
+  }
+}
+
 function clearStorage() {
   localStorage.removeItem('listSt');
   todoList = [];
   renderTodoLIst();
+  document.querySelector('.alert-box-container').classList.remove('open')
 }
 
